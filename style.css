@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    background: radial-gradient(circle, #330016, #000);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: "Courier New", cursive;
+}
+
+.name {
+    position: absolute;
+    top: 20px;
+    font-size: 50px;
+    color: #ff99cc;
+    text-shadow: 0 0 20px #ff1a75;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff4d94; }
+    to { text-shadow: 0 0 30px #ff80b3; }
+}
+
+/* Corazón */
+.heart {
+    width: 180px;
+    height: 180px;
+    background: #ff0066;
+    position: absolute;
+    transform: rotate(-45deg);
+    animation: beat 1.2s infinite;
+    box-shadow: 0 0 25px #ff80b3;
+    cursor: pointer;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 180px;
+    height: 180px;
+    background: #ff0066;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before { top: -90px; left: 0; }
+.heart::after { left: 90px; top: 0; }
+
+@keyframes beat {
+    0%,100% { transform: scale(1) rotate(-45deg); }
+    50% { transform: scale(1.3) rotate(-45deg); }
+}
+
+/* Flores */
+.flowers img {
+    width: 120px;
+    position: absolute;
+    opacity: 0;
+    animation: showFlower 3s forwards;
+}
+
+@keyframes showFlower {
+    0% { opacity: 0; transform: translateY(100px) scale(0.3); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.f1 { top: 15%; left: 8%; }
+.f2 { top: 20%; right: 10%; }
+.f3 { bottom: 12%; left: 5%; }
+.f4 { bottom: 15%; right: 7%; }
+.f5 { top: 50%; left: 3%; }
+.f6 { top: 50%; right: 5%; }
+
+.l1 { bottom: 5%; left: 50%; transform: translateX(-150px); }
+.l2 { bottom: 5%; right: 50%; transform: translateX(150px); }
+
+/* Mensajes */
+.message-box {
+    position: absolute;
+    bottom: 80px;
+}
+
+#msg {
+    font-size: 35px;
+    color: #ff99cc;
+    text-shadow: 0 0 15px #ff2b5f;
+    text-align: center;
+    animation: fade 2s infinite;
+}
+
+@keyframes fade {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Botón */
+#startBtn {
+    position: absolute;
+    bottom: 25px;
+    padding: 12px 28px;
+    background: #ff0066;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff4d94;
+}
+
+#startBtn:hover {
+    background: #ff3385;
+}
+
+/* Pétalos */
+.petalo {
+    position: fixed;
+    top: -20px;
+    font-size: 25px;
+    color: #ff80b3;
+    animation: caer 5s linear forwards;
+}
+
+@keyframes caer {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+h1{
+    color:#ff99cc
+}
+p{
+    color:#ff99cc
+}
